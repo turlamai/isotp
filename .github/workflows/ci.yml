@@ -7,10 +7,10 @@ on:
     branches: [main]
 
 # Keep all Windows, macOS and Linux tests and documentation checks.
-# Only superseded CI runs for the same PR/branch are cancelled.
+# Preserve quality evidence for each main commit; cancel only stale PR runs.
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
