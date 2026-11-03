@@ -91,7 +91,7 @@ The [Scribble reference](isotp/scribblings/isotp.scrbl) is the authoritative
 description of the frame codec, seven address modes, state-machine returns,
 flow control and timing contracts. Its new single-frame example is evaluated
 as part of the document build. Run the
-[standalone quickstart](examples/quickstart.rkt) without a CAN interface.
+[standalone quickstart](isotp/examples/quickstart.rkt) without a CAN interface.
 Do not confuse a passed codec smoke test with a real CAN/ECU qualification.
 
 From the package root (Racket installed):
@@ -99,7 +99,7 @@ From the package root (Racket installed):
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p isotp
-racket examples/quickstart.rkt
+racket isotp/examples/quickstart.rkt
 raco setup --check-pkg-deps -l isotp
 ```
 

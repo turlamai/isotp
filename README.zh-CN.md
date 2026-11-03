@@ -64,7 +64,7 @@ raco pkg install isotp
 
 [Scribble API 手册](isotp/scribblings/isotp.scrbl)是帧编解码、
 七种寻址模式、状态机返回值、流控和时间契约的权威来源；
-单帧示例在文档构建期间真实执行。[独立入门示例](examples/quickstart.rkt)
+单帧示例在文档构建期间真实执行。[独立入门示例](isotp/examples/quickstart.rkt)
 不依赖 CAN 适配器。编解码器测试通过不等于完成实车/ECU 联调。
 
 在已安装 Racket 的仓库根目录执行：
@@ -72,7 +72,7 @@ raco pkg install isotp
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p isotp
-racket examples/quickstart.rkt
+racket isotp/examples/quickstart.rkt
 raco setup --check-pkg-deps -l isotp
 ```
 
