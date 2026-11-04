@@ -30,6 +30,6 @@ jobs:
       - name: Run tests
         run: raco test -p isotp
       - name: Run transport-free documented quickstart
-        run: racket examples/quickstart.rkt
+        run: racket isotp/examples/quickstart.rkt
       - name: Build Scribble API and verify dependencies
         run: raco setup --check-pkg-deps -l isotp
